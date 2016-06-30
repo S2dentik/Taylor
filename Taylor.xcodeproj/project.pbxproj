@@ -165,6 +165,11 @@
 		B1F4BECB1BF50071003C584A /* Array+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F4BEC91BF50071003C584A /* Array+ExtensionsTests.swift */; };
 		B1F4BECC1BF50071003C584A /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F4BECA1BF50071003C584A /* TimerTests.swift */; };
 		B1F4BECE1BF500B7003C584A /* ReportGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F4BECD1BF500B7003C584A /* ReportGeneratorTests.swift */; };
+		FF01F1DC1D250E090080928D /* SourceKittenFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF967AB51CBC025900A42BDB /* SourceKittenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FF01F1DE1D250E6E0080928D /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF01F1DD1D250E6E0080928D /* Yaml.framework */; };
+		FF01F1DF1D250E6E0080928D /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF01F1DD1D250E6E0080928D /* Yaml.framework */; };
+		FF01F1E01D250E780080928D /* Yaml.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF01F1DD1D250E6E0080928D /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FF01F1E11D250ECC0080928D /* Yaml.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF01F1DD1D250E6E0080928D /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FF5DF6A31CBCFB9400768DFE /* ComponentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5DF6A21CBCFB9400768DFE /* ComponentType.swift */; };
 		FF5DF6A61CBD23CD00768DFE /* ExtendedComponentExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5DF6A51CBD23CD00768DFE /* ExtendedComponentExtensions.swift */; };
 		FF5DF6A81CBD23FE00768DFE /* OffsetRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5DF6A71CBD23FE00768DFE /* OffsetRange.swift */; };
@@ -173,7 +178,6 @@
 		FF967AB81CBC025900A42BDB /* SourceKittenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF967AB51CBC025900A42BDB /* SourceKittenFramework.framework */; };
 		FF967AB91CBC025900A42BDB /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF967AB61CBC025900A42BDB /* SWXMLHash.framework */; };
 		FF967ABB1CBC0B2300A42BDB /* ExcludesFileReader.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF967AB41CBC025900A42BDB /* ExcludesFileReader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FF967ABC1CBC0B8000A42BDB /* SourceKittenFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF967AB51CBC025900A42BDB /* SourceKittenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FF967ABD1CBC0B8000A42BDB /* SWXMLHash.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF967AB61CBC025900A42BDB /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FF967ABE1CBC0C2300A42BDB /* ExcludesFileReader.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF967AB41CBC025900A42BDB /* ExcludesFileReader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FF967ABF1CBC0C2300A42BDB /* SourceKittenFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF967AB51CBC025900A42BDB /* SourceKittenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -222,6 +226,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				FF01F1E11D250ECC0080928D /* Yaml.framework in CopyFiles */,
 				692FCBF41BED2E8400DB5F16 /* TaylorFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,7 +237,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FF967ABC1CBC0B8000A42BDB /* SourceKittenFramework.framework in CopyFiles */,
+				FF01F1E01D250E780080928D /* Yaml.framework in CopyFiles */,
+				FF01F1DC1D250E090080928D /* SourceKittenFramework.framework in CopyFiles */,
 				FF967ABD1CBC0B8000A42BDB /* SWXMLHash.framework in CopyFiles */,
 				FF967ABB1CBC0B2300A42BDB /* ExcludesFileReader.framework in CopyFiles */,
 			);
@@ -449,6 +455,7 @@
 		B1F4BEC91BF50071003C584A /* Array+ExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+ExtensionsTests.swift"; sourceTree = "<group>"; };
 		B1F4BECA1BF50071003C584A /* TimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
 		B1F4BECD1BF500B7003C584A /* ReportGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportGeneratorTests.swift; sourceTree = "<group>"; };
+		FF01F1DD1D250E6E0080928D /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Yaml.framework; sourceTree = "<group>"; };
 		FF5DF6A21CBCFB9400768DFE /* ComponentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComponentType.swift; path = ../BoundariesKit/ComponentType.swift; sourceTree = "<group>"; };
 		FF5DF6A51CBD23CD00768DFE /* ExtendedComponentExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedComponentExtensions.swift; sourceTree = "<group>"; };
 		FF5DF6A71CBD23FE00768DFE /* OffsetRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetRange.swift; sourceTree = "<group>"; };
@@ -474,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				692FCBEE1BED2C2A00DB5F16 /* TaylorFramework.framework in Frameworks */,
+				FF01F1DF1D250E6E0080928D /* Yaml.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF967AB71CBC025900A42BDB /* ExcludesFileReader.framework in Frameworks */,
+				FF01F1DE1D250E6E0080928D /* Yaml.framework in Frameworks */,
 				FF967AB81CBC025900A42BDB /* SourceKittenFramework.framework in Frameworks */,
 				FF967AB91CBC025900A42BDB /* SWXMLHash.framework in Frameworks */,
 			);
@@ -1051,6 +1060,7 @@
 		FF967AB31CBC025900A42BDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FF01F1DD1D250E6E0080928D /* Yaml.framework */,
 				FF967AB41CBC025900A42BDB /* ExcludesFileReader.framework */,
 				FF967AB51CBC025900A42BDB /* SourceKittenFramework.framework */,
 				FF967AB61CBC025900A42BDB /* SWXMLHash.framework */,
@@ -1436,7 +1446,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TaylorFramework/Frameworks",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1456,7 +1469,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TaylorFramework/Frameworks",
+				);
 				INFOPLIST_FILE = Taylor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
