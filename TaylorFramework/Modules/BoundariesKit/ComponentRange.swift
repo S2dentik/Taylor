@@ -6,21 +6,20 @@
 //  Copyright © 2015 YOPESO. All rights reserved.
 //
 
-struct ComponentRange {
-    let startLine: Int
-    let endLine: Int
+public struct ComponentRange {
+    public let startLine: Int
+    public let endLine: Int
     
-    init(sl: Int, el: Int) {
+    public init(sl: Int, el: Int) {
         startLine = sl
         endLine = el
     }
 }
 
 
-extension ComponentRange: Equatable {
-}
+extension ComponentRange: Equatable { }
 
-func ==(lhs: ComponentRange, rhs: ComponentRange) -> Bool {
+public func ==(lhs: ComponentRange, rhs: ComponentRange) -> Bool {
     return lhs.startLine == rhs.startLine &&
         lhs.endLine == rhs.endLine
 }

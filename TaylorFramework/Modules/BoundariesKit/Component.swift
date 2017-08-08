@@ -6,20 +6,20 @@
 //  Copyright © 2015 YOPESO. All rights reserved.
 //
 
-final class Component {
-    var parent: Component?
-    let type: ComponentType
-    let range: ComponentRange
-    var name: String?
-    var components = [Component]()
+public final class Component {
+    public var parent: Component?
+    public let type: ComponentType
+    public let range: ComponentRange
+    public var name: String?
+    public var components = [Component]()
     
-    init(type: ComponentType, range: ComponentRange, name: String? = nil) {
+    public init(type: ComponentType, range: ComponentRange, name: String? = nil) {
         self.type = type
         self.range = range
         self.name = name
     }
     
-    func makeComponent(type: ComponentType, range: ComponentRange, name: String? = nil) -> Component {
+    public func makeComponent(type: ComponentType, range: ComponentRange, name: String? = nil) -> Component {
         let component = Component(type: type, range: range, name: name)
         
         component.parent = self
@@ -30,7 +30,7 @@ final class Component {
 }
 
 extension Component : Hashable {
-    var hashValue: Int {
+    public var hashValue: Int {
         let initialValue = range.startLine.hashValue + range.endLine.hashValue + type.hashValue
         return components.reduce(initialValue) { $0 + $1.hashValue }
     }
@@ -38,7 +38,7 @@ extension Component : Hashable {
 
 extension Component : Equatable {}
 
-func ==(lhs: Component, rhs: Component) -> Bool {
+public func ==(lhs: Component, rhs: Component) -> Bool {
     return lhs.range == rhs.range &&
         lhs.type == rhs.type &&
         lhs.name == rhs.name &&

@@ -164,14 +164,14 @@ extension ExtendedComponent {
 }
 
 extension ExtendedComponent : Hashable {
-    var hashValue: Int {
+    public var hashValue: Int {
         let initialValue = offsetRange.start.hashValue + offsetRange.end.hashValue + type.hashValue
         return components.reduce(initialValue) { $0 + $1.hashValue }
     }
 }
 
 extension ExtendedComponent : Equatable {}
-func ==(lhs: ExtendedComponent, rhs: ExtendedComponent) -> Bool {
+public func ==(lhs: ExtendedComponent, rhs: ExtendedComponent) -> Bool {
     if !(lhs.offsetRange == rhs.offsetRange) { return false }
     if lhs.type != rhs.type { return false }
     

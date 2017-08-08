@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ComponentType {
+public enum ComponentType {
     case function, `operator`, `subscript`, accessor, variable
     case module
     case `class`, `struct`, `enum`, enumElement, `protocol`, `extension`

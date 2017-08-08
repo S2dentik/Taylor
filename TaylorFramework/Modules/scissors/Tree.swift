@@ -16,6 +16,26 @@ struct Tree {
     let dictionary: [String: SourceKitRepresentable]
     let syntaxMap: SyntaxMap
     let parts: [File]
+
+    var extendedComponent: ExtendedComponent {
+        let root = ExtendedComponent(type: .other, range: dictionary.offsetRange, names: (nil, nil))
+        let noStringsText = replaceStringsWithSpaces(parts.map() { $0.contents })
+        let finder = ComponentFinder(text: noStringsText, syntaxMap: syntaxMap)
+        let sourcekitComponents = root.appendComponents(dictionary.substructure)
+
+        root.insert(sourcekitComponents + finder.findGetters(sourcekitComponents))
+        root.removeRedundantClosures()
+        root.processBraces()
+        root.insert(finder.additionalComponents)
+        root.process()
+        root.filter([.array, .dictionary, .object, .enumElement])
+
+        return root
+    }
+
+    var component: Component {
+        return convertTree(extendedComponent)
+    }
     
     init(file: File) {
         // Requests to sourcekitd stuck when sent simultaneously from multiple threads
@@ -28,26 +48,6 @@ struct Tree {
         syntaxMap = structure.syntaxMap
         parts = file.divideByLines()
     }
-    
-    //MARK: Dictionary to tree methods
-    
-    func makeTree() -> Component {
-        let root = ExtendedComponent(type: .other, range: dictionary.offsetRange, names: (nil, nil))
-        let noStringsText = replaceStringsWithSpaces(parts.map() { $0.contents })
-        let finder = ComponentFinder(text: noStringsText, syntaxMap: syntaxMap)
-        let sourcekitComponents = root.appendComponents(dictionary.substructure)
-                
-        root.insert(sourcekitComponents + finder.findGetters(sourcekitComponents))
-        root.removeRedundantClosures()
-        root.processBraces()
-        root.insert(finder.additionalComponents)
-        root.process()
-        root.filter([.array, .dictionary, .object, .enumElement])
-        
-        return convertTree(root)
-    }
-    
-    
     
     //MARK: Conversion to Component type
     

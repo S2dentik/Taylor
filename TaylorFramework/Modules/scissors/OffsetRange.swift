@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct OffsetRange {
-    var start: Int
-    var end: Int
+public struct OffsetRange {
+    public var start: Int
+    public var end: Int
     
-    init(start: Int, end: Int) {
+    public init(start: Int, end: Int) {
         self.start = start
         self.end = end
     }
@@ -20,11 +20,11 @@ struct OffsetRange {
 
 extension OffsetRange: Comparable { }
 
-func ==(lhs: OffsetRange, rhs: OffsetRange) -> Bool {
+public func ==(lhs: OffsetRange, rhs: OffsetRange) -> Bool {
     return lhs.start == rhs.start && lhs.end == rhs.end
 }
 
-func <(lhs: OffsetRange, rhs: OffsetRange) -> Bool {
+public func <(lhs: OffsetRange, rhs: OffsetRange) -> Bool {
     return lhs.start < rhs.start
 }
 

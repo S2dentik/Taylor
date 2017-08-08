@@ -9,17 +9,17 @@
 import Foundation
 import SourceKittenFramework
 
-typealias Names = (name: String?, typeName: String?)
+public typealias Names = (name: String?, typeName: String?)
 
-final class ExtendedComponent {
+public final class ExtendedComponent {
     
-    var offsetRange: OffsetRange
-    var type: ComponentType
-    var names: Names
-    var parent: ExtendedComponent? = nil
-    var components: [ExtendedComponent]
+    public var offsetRange: OffsetRange
+    public var type: ComponentType
+    public var names: Names
+    public var parent: ExtendedComponent? = nil
+    public var components: [ExtendedComponent]
     
-    var name: String? {
+    public var name: String? {
         get {
             return names.name
         }
@@ -28,20 +28,20 @@ final class ExtendedComponent {
         }
     }
     
-    var typeName: String? {
+    public var typeName: String? {
         get {
             return names.typeName
         }
     }
     
-    init(type: ComponentType, range: OffsetRange, names: Names = (nil, nil)) {
+    public init(type: ComponentType, range: OffsetRange, names: Names = (nil, nil)) {
         self.type = type
         self.offsetRange = range
         self.components = []
         self.names = names
     }
     
-    init(dict: [String: AnyObject]) {
+    public init(dict: [String: AnyObject]) {
         if let type = dict["type"] as? String,
             let startOffset = dict["offset"] as? Int,
             let length = dict["length"] as? Int {

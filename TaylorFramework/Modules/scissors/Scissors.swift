@@ -9,7 +9,18 @@
 import Foundation
 import SourceKittenFramework
 
-struct Scissors {
+public struct Scissors {
+
+    public init() { }
+
+    public func component(from string: String) -> ExtendedComponent {
+        return Tree(file: File(contents: string)).extendedComponent
+    }
+
+    public func tokenize(_ string: String) -> FileContent {
+        return fileContent(from: File(contents: string))
+    }
+
     /**
      Tokenizes contents of file at a given path by converting it to a tree of components.
      
@@ -17,13 +28,11 @@ struct Scissors {
      
      - returns: **FileContent** containing 'path' to file and the tree of components.
      */
-    func tokenizeFileAtPath(_ path: String) -> FileContent {
-        guard let fileForPath = File(path: path),
-                  FileManager.default.fileExists(atPath: path) else {
-                return FileContent(path: "", components: [])
-        }
-        let tree = Tree(file: fileForPath)
-        let root = tree.makeTree()
-        return FileContent(path: path, components: root.components)
+    public func tokenizeFileAtPath(_ path: String) -> FileContent {
+        return FileContent(path: path, components: File(path: path).map(Tree.init)?.component.components ?? [])
+    }
+
+    private func fileContent(from file: File) -> FileContent {
+        return FileContent(path: "", components: Tree(file: file).component.components)
     }
 }
